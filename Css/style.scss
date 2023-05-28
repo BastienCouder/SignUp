@@ -1,0 +1,361 @@
+@font-face {
+  font-family: "Noto";
+  src: url("font/NotoSans-Regular.ttf") format("truetype");
+  font-family: "Noto-Bold";
+  src: url("font/NotoSans-Bold.ttf") format("truetype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Noto-Bold";
+  color: #2d407f;
+}
+
+body {
+  background-color: rgb(46, 46, 46);
+  display: flex;
+  place-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.container {
+  background-color: #ffffff;
+  position: relative;
+  display: flex;
+  width: 50%;
+  height: 480px;
+
+  @media screen and (min-width: 765px) and (max-width: 1023px) {
+    width: 70%;
+  }
+
+  @media screen and (max-width: 765px) {
+    width: 95%;
+    height: 550px;
+  }
+}
+
+.container-sign-up {
+  left: 0;
+  width: 50%;
+  z-index: 2;
+}
+
+.activeShow {
+  transform: translateX(-100%);
+}
+
+.activeShow2 {
+  transform: translateX(100%);
+}
+
+@keyframes show {
+  0%,
+  45% {
+    opacity: 1;
+  }
+  45%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.container-login {
+  left: 0;
+  width: 50%;
+  z-index: 2;
+}
+
+.formu {
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin: auto;
+
+  .titre {
+    width: 95%;
+    margin: auto;
+    margin-top: 1.6rem;
+  }
+  h1 {
+    width: 92%;
+    margin: auto;
+    font-family: "Noto-Bold";
+    font-size: clamp(1.3em, 2vw, 1.7em);
+    color: #2d407f;
+    padding-bottom: 1.8rem;
+  }
+  .form {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin: auto;
+    width: 95%;
+  }
+
+  .inputBox {
+    position: relative;
+    height: 50px;
+  }
+
+  i {
+    position: absolute;
+    right: 0;
+    z-index: 99999;
+  }
+  .inputBox input {
+    position: absolute;
+    top: -0.3rem;
+    left: 0;
+    font-family: "Noto";
+    text-transform: none;
+    background: transparent;
+  }
+
+  input[type="email"] {
+    text-transform: lowercase;
+  }
+
+  .inputBox span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: transparent;
+    display: inline-block;
+    transition: 0.5s;
+    pointer-events: none;
+  }
+
+  .inputBox input:focus ~ span,
+  .active {
+    transform: translateY(-1.3rem);
+    font-size: 0.8em;
+  }
+
+  .lab {
+    width: 100%;
+    padding: 0.3rem 0;
+    background: none;
+    border: none;
+    border-bottom: 3px solid #fa5a5c;
+    color: #2d407f;
+    font-size: clamp(0.9em, 2vw, 1em);
+    font-weight: 700;
+    text-transform: capitalize;
+    outline: none;
+    transition: border-color 0.2s;
+    font-family: "Noto-Bold";
+  }
+
+  .lab :focus {
+    border: none;
+    border-bottom: 2px solid #fa5a5c;
+  }
+
+  .input-wrap {
+    display: flex;
+    flex-direction: column;
+    width: 42%;
+    margin: auto;
+    margin-bottom: 0.8rem;
+    @media screen and (max-width: 765px) {
+      width: 92%;
+    }
+  }
+  .eng {
+    display: flex;
+    flex-direction: column;
+    width: 92%;
+    margin: auto;
+    margin-bottom: 0.8rem;
+  }
+  .ind {
+    display: flex;
+    flex-direction: column;
+    width: 92%;
+    margin: auto;
+  }
+  .or {
+    display: flex;
+    width: 88%;
+    flex-direction: row;
+    place-content: center;
+    align-items: center;
+    padding: 20px 0 10px 0;
+
+    p {
+      font-family: "Noto-Bold";
+      padding: 0px 1rem;
+      text-transform: uppercase;
+      color: #2d407f;
+      font-size: 1em;
+    }
+  }
+  input[type="checkbox"] {
+    display: grid;
+    place-content: center;
+    appearance: none;
+    background-color: #fff;
+    font-size: 1em;
+    color: #2d407f;
+    width: 1.15em;
+    height: 1.15em;
+    border: 2.5px solid #2d407f;
+    border-radius: 5px;
+  }
+
+  input[type="checkbox"]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    transform: scale(0);
+    transition: 0.2s;
+    box-shadow: inset 1em 1em #fa5a5c;
+  }
+
+  input[type="checkbox"]:checked::before {
+    transform: scale(1);
+  }
+  .rgpd {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 92%;
+    margin: auto;
+    padding-bottom: 1.4rem;
+
+    .checkboxtext {
+      font-family: "Noto-Bold";
+      font-size: clamp(0.7em, 2vw, 0.8em);
+      padding-inline-start: 0.5rem;
+      @media screen and (max-width: 765px) {
+        padding-inline-start: 0.7rem;
+      }
+    }
+  }
+  hr {
+    width: 45%;
+    border: none;
+    height: 3px;
+    background-color: #fa5a5c;
+  }
+
+  .media {
+    display: flex;
+    justify-content: center;
+    width: 40%;
+    margin: auto;
+    padding-bottom: 20px;
+  }
+
+  .imga {
+    width: auto;
+    height: 35px;
+    padding-inline: 8px;
+    cursor: pointer;
+  }
+  .but {
+    width: 92%;
+    margin: auto;
+  }
+  .button {
+    width: 100%;
+    font-size: 1em;
+    background-color: #2d407f;
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    border: none;
+    height: 50px;
+    margin-top: 0px;
+    padding: 15px 0px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+}
+
+.block1 {
+  position: absolute;
+  background-color: #fff;
+  width: 50%;
+  top: 0;
+  height: 480px;
+  transition: 1s ease-in-out;
+  @media screen and (max-width: 765px) {
+    height: 550px;
+  }
+}
+
+.block2 {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 480px;
+
+  @media screen and (max-width: 765px) {
+    height: 550px;
+  }
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.overlay-panel {
+  z-index: 9999;
+  display: block;
+  background-image: url("/geo.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: 1s ease-in-out;
+  padding-bottom: 2rem;
+  padding-left: 0.5rem;
+
+  @media screen and (max-width: 765px) {
+    background-size: 140%;
+  }
+}
+
+h2 {
+  font-size: clamp(1.6em, 2vw, 2em);
+  padding-bottom: 0.3rem;
+}
+
+p {
+  text-align: center;
+  font-size: clamp(0.9em, 2vw, 1em);
+}
+
+.button {
+  width: 50%;
+  font-size: 1em;
+  background-color: #fa5a5c;
+  color: rgb(255, 255, 255);
+  border-radius: 5px;
+  border: none;
+  height: 50px;
+  margin-top: 0.7rem;
+  padding: 0.8rem 0;
+  font-weight: bold;
+  cursor: pointer;
+  @media screen and (max-width: 765px) {
+    width: 80%;
+  }
+}
