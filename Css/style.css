@@ -308,7 +308,7 @@ body {
 .overlay-panel {
   z-index: 9999;
   display: block;
-  background-image: url("/geo.jpg");
+  background-image: url("geo.jpg");
   background-size: cover;
   background-position: center;
   width: 100%;
