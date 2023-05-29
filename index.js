@@ -51,6 +51,11 @@ function showLoginForm() {
       }
     });
   }, 800);
+
+  document.body.style.pointerEvents = "none";
+  setTimeout(() => {
+    document.body.style.pointerEvents = "auto";
+  }, 800);
 }
 
 // Fonction pour afficher le formulaire d'inscription
@@ -81,6 +86,11 @@ function showSignUpForm() {
         input.nextElementSibling.classList.remove("active");
       }
     });
+  }, 800);
+
+  document.body.style.pointerEvents = "none";
+  setTimeout(() => {
+    document.body.style.pointerEvents = "auto";
   }, 800);
 }
 
